@@ -1,5 +1,5 @@
 package Entities.EntityEnums;
 
-public enum Entities {
+public enum EntitiesEnum {
     Product
 }
