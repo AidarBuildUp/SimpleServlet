@@ -2,10 +2,21 @@ package Entities;
 
 public class Product {
 
+    private Long productCode;
+
     private String name;
 
-    public Product(String name) {
+    public Product(Long index, String name) {
+        this.productCode = index;
         this.name = name;
+    }
+
+    public Long getProductCode() {
+        return productCode;
+    }
+
+    public void setProductCode(Long productCode) {
+        this.productCode = productCode;
     }
 
     public String getName() {

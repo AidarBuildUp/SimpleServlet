@@ -3,17 +3,17 @@ package Dao;
 import Entities.EntityEnums.EntitiesEnum;
 import Entities.Product;
 import Exceptions.ElementNotFoundException;
-import MapDataBase.MapDb;
+import DataBase.DbEmulator;
 
-import java.util.Map;
+import java.util.List;
 
 public class ProductDao {
 
-    public Map<Long, Product> getAll () throws ElementNotFoundException {
-      return MapDb.getAllEntities(EntitiesEnum.Product);
+    public List<Product> getAll () throws ElementNotFoundException {
+      return DbEmulator.getAllEntities(EntitiesEnum.Product);
     }
 
     public Product getById (Long id) throws ElementNotFoundException {
-        return MapDb.getOne(EntitiesEnum.Product, id);
+        return DbEmulator.getOne(EntitiesEnum.Product, id);
     }
 }

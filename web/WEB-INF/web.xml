@@ -13,5 +13,7 @@
             <url-pattern>/product</url-pattern>
         </servlet-mapping>
 
+    <jsp-config></jsp-config>
+
 
 </web-app>
