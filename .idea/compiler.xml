@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SimpleServlet" target="1.5" />
+      <module name="SimpleServlet" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

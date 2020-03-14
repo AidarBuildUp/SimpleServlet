@@ -13,5 +13,7 @@
         <% Product product = (Product) request.getAttribute("product");%>
         <h3>Code <%= product.getProductCode()%></h3>
         <h3>Name <%= product.getName()%></h3>
+        <h2><a href="<%= request.getContextPath()%>/product?id=<%=product.getProductCode()%>&action=add">Add to basket</a> </h2>
+        <h2><a href="<%= request.getContextPath()%>/product?id=<%=product.getProductCode()%>&action=add">Remove from one item basket</a> </h2>
     </body>
 </html>

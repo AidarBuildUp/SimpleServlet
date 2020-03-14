@@ -13,7 +13,18 @@
             <url-pattern>/product</url-pattern>
         </servlet-mapping>
 
-    <jsp-config></jsp-config>
+        <servlet>
+            <servlet-name>basketController</servlet-name>
+            <servlet-class>Controllers.BasketController</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>basketController</servlet-name>
+            <url-pattern>/basket</url-pattern>
+        </servlet-mapping>
+
+
+
+
 
 
 </web-app>
