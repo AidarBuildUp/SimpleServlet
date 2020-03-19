@@ -1,4 +1,4 @@
-package Entities.EntityEnums;
+package Entity.EntityEnums;
 
 public enum EntitiesEnum {
     Product

@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.*, java.text.*" %>
-<%@ page import="Entities.Product" %>
+
+<%@ page import="Entity.Product" %>
+<%@ page import="java.util.LinkedHashSet" %>
+<%@ page import="java.util.Map" %>
+
 
 <html>
 <head>
@@ -10,10 +13,20 @@
 </head>
     <body>
         <h2>Product</h2>
-        <% Product product = (Product) request.getAttribute("product");%>
-        <h3>Code <%= product.getProductCode()%></h3>
-        <h3>Name <%= product.getName()%></h3>
-        <h2><a href="<%= request.getContextPath()%>/product?id=<%=product.getProductCode()%>&action=add">Add to basket</a> </h2>
-        <h2><a href="<%= request.getContextPath()%>/product?id=<%=product.getProductCode()%>&action=add">Remove from one item basket</a> </h2>
+        <h3>Id ${product.id}</h3>
+        <h3>Name ${product.name}</h3>
+        <h2><a href="./basket.add?id=${product.id}">Add to basket</a> </h2>
+
+        <h2>Busket</h2>
+        <ul>
+            <% if (session.getAttribute("basket") != null) {
+                    Map <Product, Long> basket = (Map <Product, Long>) session.getAttribute("basket");
+                    LinkedHashSet<Product> keys = (LinkedHashSet <Product>) basket.keySet();
+                    for (Product productInBasket : keys){%>
+                        <li> <%= productInBasket.getName()%>  <%= basket.get(productInBasket)%> </li>
+                    <%}
+            }%>
+        </ul>
+
     </body>
 </html>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, java.text.*" %>
-<%@ page import="Entities.Product" %>
+<%@ page import="Entity.Product" %>
 
 <html>
 <head>

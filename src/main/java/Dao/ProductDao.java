@@ -1,8 +1,8 @@
 package Dao;
 
-import Entities.EntityEnums.EntitiesEnum;
-import Entities.Product;
-import Exceptions.ElementNotFoundException;
+import Entity.EntityEnums.EntitiesEnum;
+import Entity.Product;
+import Exception.ElementNotFoundException;
 import DataBase.DbEmulator;
 
 import java.util.List;

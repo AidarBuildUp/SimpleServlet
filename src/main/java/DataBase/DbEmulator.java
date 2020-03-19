@@ -1,8 +1,8 @@
 package DataBase;
 
-import Entities.EntityEnums.EntitiesEnum;
-import Entities.Product;
-import Exceptions.ElementNotFoundException;
+import Entity.EntityEnums.EntitiesEnum;
+import Entity.Product;
+import Exception.ElementNotFoundException;
 
 import java.util.*;
 

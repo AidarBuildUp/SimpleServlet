@@ -1,8 +1,9 @@
-package Controllers;
+package Controller;
 
 import Dao.ProductDao;
-import Entities.Product;
-import Exceptions.ElementNotFoundException;
+import Entity.Product;
+import Exception.ElementNotFoundException;
+import Util.ParamConstants;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -20,29 +21,29 @@ public class ProductController extends HttpServlet {
     private final String ALL_PRODUCTS_PAGE = "/pages/allProducts.jsp";
     private final String ONE_PRODUCT_PAGE = "/pages/product.jsp";
 
+    private final String PARAM_ID = "id";
+
 
     private static final Logger logger = Logger.getLogger(ProductController.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println(">> GET request income");
+        logger.info("ProductController get request");
+
         try {
-            if (req.getParameter("id") != null) { //one product with explicit code requested
-                Long productCode = Long.valueOf(req.getParameter("id"));
+            if (req.getParameter(PARAM_ID) != null) { //one product with explicit code requested
+                logger.info("Param id is founded");
+
+                Long productCode = Long.valueOf(req.getParameter(PARAM_ID));
+
+                logger.info("Value is " + productCode);
+
                 Product product = productDao.getById(productCode);
 
-                req.setAttribute("product", product);
+                req.setAttribute(ParamConstants.PARAM_PRODUCT, product);
 
                 RequestDispatcher dispatcher = req.getRequestDispatcher(ONE_PRODUCT_PAGE);
-                dispatcher.forward(req, resp);
-
-            } else { //all products requested
-                List<Product> products = productDao.getAll();
-
-                req.setAttribute("products", products);
-
-                RequestDispatcher dispatcher = req.getRequestDispatcher(ALL_PRODUCTS_PAGE);
                 dispatcher.forward(req, resp);
             }
 

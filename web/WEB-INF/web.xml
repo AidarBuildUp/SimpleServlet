@@ -6,20 +6,29 @@
 
         <servlet>
             <servlet-name>productController</servlet-name>
-            <servlet-class>Controllers.ProductController</servlet-class>
+            <servlet-class>Controller.ProductController</servlet-class>
         </servlet>
         <servlet-mapping>
             <servlet-name>productController</servlet-name>
             <url-pattern>/product</url-pattern>
         </servlet-mapping>
 
+    <servlet>
+        <servlet-name>allProductController</servlet-name>
+        <servlet-class>Controller.AllProductController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allProductController</servlet-name>
+        <url-pattern>/products</url-pattern>
+    </servlet-mapping>
+
         <servlet>
-            <servlet-name>basketController</servlet-name>
-            <servlet-class>Controllers.BasketController</servlet-class>
+            <servlet-name>addToBasketController</servlet-name>
+            <servlet-class>Controller.AddToBasketController</servlet-class>
         </servlet>
         <servlet-mapping>
-            <servlet-name>basketController</servlet-name>
-            <url-pattern>/basket</url-pattern>
+            <servlet-name>addToBasketController</servlet-name>
+            <url-pattern>/basket.add</url-pattern>
         </servlet-mapping>
 
 
