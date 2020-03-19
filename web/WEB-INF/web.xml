@@ -31,6 +31,15 @@
             <url-pattern>/basket.add</url-pattern>
         </servlet-mapping>
 
+        <servlet>
+            <servlet-name>removeFromBasketController</servlet-name>
+            <servlet-class>Controller.RemoveFromBasketController</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>removeFromBasketController</servlet-name>
+            <url-pattern>/basket.del</url-pattern>
+        </servlet-mapping>
+
 
 
 

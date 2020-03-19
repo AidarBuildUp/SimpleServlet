@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 public class ProductController extends HttpServlet {
 
@@ -20,9 +19,6 @@ public class ProductController extends HttpServlet {
 
     private final String ALL_PRODUCTS_PAGE = "/pages/allProducts.jsp";
     private final String ONE_PRODUCT_PAGE = "/pages/product.jsp";
-
-    private final String PARAM_ID = "id";
-
 
     private static final Logger logger = Logger.getLogger(ProductController.class);
 
@@ -32,10 +28,10 @@ public class ProductController extends HttpServlet {
         logger.info("ProductController get request");
 
         try {
-            if (req.getParameter(PARAM_ID) != null) { //one product with explicit code requested
+            if (req.getParameter(ParamConstants.PARAM_ID) != null) { //one product with explicit code requested
                 logger.info("Param id is founded");
 
-                Long productCode = Long.valueOf(req.getParameter(PARAM_ID));
+                Long productCode = Long.valueOf(req.getParameter(ParamConstants.PARAM_ID));
 
                 logger.info("Value is " + productCode);
 

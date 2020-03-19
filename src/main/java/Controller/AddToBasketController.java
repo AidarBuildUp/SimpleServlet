@@ -43,7 +43,13 @@ public class AddToBasketController extends HttpServlet {
 
                 } else {
                     Map<Product, Long> basket = (Map<Product, Long>) session.getAttribute(ParamConstants.PARAM_BASKET);
-                    basket.put(product, basket.get(product) + 1);
+                    if (basket.get(product) == null) {
+
+                        basket.put(product, new Long (1));
+
+                    } else{
+                        basket.put(product, basket.get(product) + 1);
+                    }
 
                     session.setAttribute(ParamConstants.PARAM_BASKET, basket);
 

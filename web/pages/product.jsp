@@ -24,10 +24,11 @@
                     Map <Product, Long> basket = (Map <Product, Long>) session.getAttribute("basket");
 
                     for (Product productInBasket : basket.keySet()){%>
-                        <li> <%= productInBasket.getName()%>  <%= basket.get(productInBasket)%> </li>
+                        <li> <%= productInBasket.getName()%>  <%= basket.get(productInBasket)%> (<a href="./basket.del?id=<%=productInBasket.getId()%>">X</a>) </li>
                     <%}
             }%>
         </ul>
+        <h4><a href="./products"> Back to main menu</a> </h4>
 
     </body>
 </html>

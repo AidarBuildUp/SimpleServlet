@@ -13,7 +13,7 @@
         <% List <Product> products = (List<Product>) request.getAttribute("products"); %>
         <ul>
             <% for (Product product: products) { %>
-            <li><a href="<%= request.getContextPath()%>/product?id=<%=product.getProductCode()%>"> <%= product.getName()%> </a></li>
+            <li><a href="./product?id=<%=product.getId()%>"> <%= product.getName()%> </a></li>
             <% } %>
         </ul>
 
