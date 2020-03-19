@@ -3,6 +3,7 @@
 <%@ page import="Entity.Product" %>
 <%@ page import="java.util.LinkedHashSet" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashSet" %>
 
 
 <html>
@@ -21,8 +22,8 @@
         <ul>
             <% if (session.getAttribute("basket") != null) {
                     Map <Product, Long> basket = (Map <Product, Long>) session.getAttribute("basket");
-                    LinkedHashSet<Product> keys = (LinkedHashSet <Product>) basket.keySet();
-                    for (Product productInBasket : keys){%>
+
+                    for (Product productInBasket : basket.keySet()){%>
                         <li> <%= productInBasket.getName()%>  <%= basket.get(productInBasket)%> </li>
                     <%}
             }%>
